@@ -98,7 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466bc231945f24bb5b0a77ca343230b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRotating: 0
   rotationSpeed: 360
+  detectionRadius: 0.64
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!58 &2248029683112693105
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,6 +149,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5808186524560653816}
   - component: {fileID: 1582509500749703126}
+  - component: {fileID: 4485485895085220257}
+  - component: {fileID: 669663802667562472}
   m_Layer: 0
   m_Name: hole
   m_TagString: Untagged
@@ -219,3 +226,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4485485895085220257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9147454765658690083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087414d144f184c9d9c05c53831227ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screw: {fileID: 2582776528128163374}
+  holeCollider: {fileID: 669663802667562472}
+--- !u!58 &669663802667562472
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9147454765658690083}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.25

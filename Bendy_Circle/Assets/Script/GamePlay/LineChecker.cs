@@ -21,7 +21,7 @@ public class LineChecker : MonoBehaviour
 
     void CheckForIntersectingLines()
     {
-        intersectingLines.Clear();
+        //intersectingLines.Clear();
      
         // Lấy danh sách các LineRenderer trong phạm vi
         LineRenderer[] allLines = FindObjectsOfType<LineRenderer>();
@@ -42,9 +42,11 @@ public class LineChecker : MonoBehaviour
                     if ((line1SortOrder < lineSortOrder && lineSortOrder < line2SortOrder) || 
                         (line2SortOrder < lineSortOrder && lineSortOrder < line1SortOrder))
                     {
-                        Debug.Log(allLines[i].gameObject.name);
-                        intersectingLines.Add(allLines[i]);
-                        foundIntersectingLine = true;
+                        if(!intersectingLines.Contains(allLines[i])){
+                            intersectingLines.Add(allLines[i]);
+                            foundIntersectingLine = true;
+                        }
+                       
                     }
                 }
             }
